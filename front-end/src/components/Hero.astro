@@ -1,0 +1,57 @@
+---
+import { urlForImage } from '../lib/urlForImage'
+import PortableTextBody from './PortableTextBody.astro'
+import { myPortableTextComponents } from './ProtableTextComponents'
+
+const { tag, title, text, image } = Astro.props
+---
+
+<main>
+	<div class="wrapper">
+		<div class="left">
+			<div class="title-block">
+				<h4>{tag}</h4>
+				<h1>{title}</h1>
+				<PortableTextBody body={text} components={myPortableTextComponents} />
+			</div>
+		</div>
+		<div class="right">
+			<img src={urlForImage(image).url()} alt={image.alt} />
+		</div>
+	</div>
+</main>
+
+<style is:global lang="scss">
+	main {
+		.wrapper {
+			display: flex;
+			align-items: center;
+			gap: 4rem;
+
+			.left {
+				width: 60%;
+				.title-block {
+					h1 {
+						color: black;
+					}
+					h4 {
+						color: black;
+					}
+					.body {
+						p {
+							margin-block: 2.5rem 0;
+						}
+					}
+				}
+			}
+
+			.right {
+				width: 40%;
+				img {
+					width: 100%;
+					border-radius: 2rem;
+				}
+			}
+		}
+	}
+</style>
