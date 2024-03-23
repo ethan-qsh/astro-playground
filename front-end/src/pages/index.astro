@@ -1,0 +1,21 @@
+---
+import Hero from '../components/Hero.astro'
+import Layout from '../layouts/Layout.astro'
+import { getSanity } from '../lib/api'
+import '../styles/styles.scss'
+
+const sections = await getSanity([`*[_type == 'home']`])
+---
+
+<Layout title="Astro playground">
+	{
+		sections[0].sections.map((section: any) => {
+			switch (section._type) {
+				case 'hero':
+					return <Hero {...section} /> // pass all section properties to Hero Component
+				default:
+					return
+			}
+		})
+	}
+</Layout>

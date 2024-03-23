@@ -1,0 +1,29 @@
+{
+  "name": "front-end",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.5.9",
+    "@astrojs/react": "^3.1.0",
+    "@sanity/astro": "^3.0.0",
+    "@sanity/client": "^6.15.7",
+    "@sanity/image-url": "^1.0.2",
+    "astro": "^4.5.8",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "sanity": "^3.35.2",
+    "sass": "^1.72.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.69",
+    "@types/react-dom": "^18.2.22",
+    "typescript": "^5.4.3"
+  }
+}
